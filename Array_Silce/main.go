@@ -95,6 +95,22 @@ func Print(array *Array) (result string) {
 	result += "]"
 	return
 }
-func main() {
 
+// 测试
+func main() {
+	// 创建一个容量为3的数组
+	a := Make(0, 3)
+	fmt.Println("cap", a.Cap(), "len", a.Len(), "array:", Print(a))
+
+	// 添加一个元素
+	a.Append(10)
+	fmt.Println("cap", a.Cap(), "len", a.Len(), "array:", Print(a))
+
+	// 增加一个元素
+	a.Append(11)
+	fmt.Println("cap", a.Cap(), "len", a.Len(), "array:", Print(a))
+
+	// 添加多个元素
+	a.AppendMany(4, 5)
+	fmt.Println("cap", a.Cap(), "len", a.Len(), "array:", Print(a))
 }
