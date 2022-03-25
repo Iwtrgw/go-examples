@@ -1,6 +1,9 @@
 package main
 
-import "sync"
+import (
+	"fmt"
+	"sync"
+)
 
 // Array 可变长数组
 type Array struct {
@@ -68,6 +71,30 @@ func (a *Array) Get(index int) int {
 	return a.array[index]
 }
 
+// Len 返回真实长度
+func (a *Array) Len() int {
+	return a.len
+}
+
+// Cap 返回容量
+func (a *Array) Cap() int {
+	return a.cap
+}
+
+// Print 辅助打印
+func Print(array *Array) (result string) {
+	result = "["
+	for i := 0; i < array.Len(); i++ {
+		// 第一个元素
+		if i == 0 {
+			result = fmt.Sprintf("%s%d", result, array.Get(i))
+			continue
+		}
+		result = fmt.Sprintf("%s %d", result, array.Get(i))
+	}
+	result += "]"
+	return
+}
 func main() {
 
 }
