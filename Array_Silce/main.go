@@ -59,6 +59,15 @@ func (a *Array) AppendMany(element ...int) {
 	}
 }
 
+// Get 获取某个下标的元素
+func (a *Array) Get(index int) int {
+	// 越界
+	if a.len == 0 || index > a.len {
+		panic("index over len")
+	}
+	return a.array[index]
+}
+
 func main() {
 
 }
