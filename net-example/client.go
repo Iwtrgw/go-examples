@@ -41,7 +41,7 @@ func main() {
 			fmt.Println("Encode msg error : ", err)
 			return
 		}
-		conn.Write([]byte(data))
+		conn.Write(data)
 		fmt.Println("send data over... ")
 	}
 }
